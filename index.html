@@ -1,0 +1,465 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ملف أعمال أمير عماد عياد | مطور واجهات أمامية</title>
+    
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    
+    <!-- Google Fonts: Cairo for Arabic -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;600;700&display=swap" rel="stylesheet">
+    
+    <style>
+        body {
+            font-family: 'Cairo', sans-serif;
+            background-color: #111827; /* Dark background */
+            color: #E5E7EB; /* Light gray text */
+        }
+        .section-title {
+            font-size: 2.25rem;
+            font-weight: 700;
+            margin-bottom: 2rem;
+            position: relative;
+            display: inline-block;
+        }
+        .section-title::after {
+            content: '';
+            position: absolute;
+            bottom: -10px;
+            right: 0;
+            width: 50%;
+            height: 4px;
+            background-color: #3B82F6; /* Blue accent */
+        }
+        html[dir="ltr"] .section-title::after {
+            right: auto;
+            left: 0;
+        }
+        html {
+            scroll-behavior: smooth;
+        }
+        .btn {
+            display: inline-block;
+            padding: 0.75rem 1.5rem;
+            border-radius: 0.5rem;
+            font-weight: 600;
+            text-align: center;
+            transition: all 0.3s ease;
+            cursor: pointer;
+        }
+        .btn-primary {
+            background-color: #3B82F6;
+            color: white;
+        }
+        .btn-primary:hover {
+            background-color: #2563EB;
+        }
+        .btn-secondary {
+            background-color: transparent;
+            color: #E5E7EB;
+            border: 2px solid #3B82F6;
+        }
+        .btn-secondary:hover {
+            background-color: #3B82F6;
+            color: white;
+        }
+        .skill-card {
+             background-color: #1F2937;
+             padding: 1.5rem;
+             border-radius: 0.5rem;
+             text-align: center;
+             transition: all 0.3s ease;
+             border: 1px solid #374151;
+        }
+        .skill-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 15px -3px rgba(59, 130, 246, 0.1), 0 4px 6px -2px rgba(59, 130, 246, 0.05);
+        }
+    </style>
+</head>
+<body class="antialiased">
+
+    <!-- Header -->
+    <header class="bg-gray-900/80 backdrop-blur-sm fixed top-0 left-0 right-0 z-50">
+        <div class="container mx-auto px-6 py-4 flex justify-between items-center">
+            <a href="#" class="flex items-center gap-3">
+                <!-- Logo Placeholder -->
+                <svg class="w-8 h-8 text-blue-400" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor">
+                  <path stroke-linecap="round" stroke-linejoin="round" d="M6.75 7.5l3 2.25-3 2.25m4.5 0h3m-9 8.25h13.5A2.25 2.25 0 0021 18V6a2.25 2.25 0 00-2.25-2.25H5.25A2.25 2.25 0 003 6v12a2.25 2.25 0 002.25 2.25z" />
+                </svg>
+                <span class="text-2xl font-bold text-white" data-translate-key="name">أمير عماد</span>
+            </a>
+            <div class="flex items-center gap-4">
+                <nav class="hidden md:flex space-x-8" id="main-nav">
+                    <a href="#about" class="text-gray-300 hover:text-blue-400 transition" data-translate-key="nav_about">عني</a>
+                    <a href="#skills" class="text-gray-300 hover:text-blue-400 transition" data-translate-key="nav_skills">مهاراتي</a>
+                    <a href="#portfolio" class="text-gray-300 hover:text-blue-400 transition" data-translate-key="nav_portfolio">أعمالي</a>
+                    <a href="#education" class="text-gray-300 hover:text-blue-400 transition" data-translate-key="nav_experience">التعليم والخبرة</a>
+                    <a href="#contact" class="text-gray-300 hover:text-blue-400 transition" data-translate-key="nav_contact">تواصل معي</a>
+                </nav>
+                <button id="lang-toggle-btn" class="btn btn-secondary py-1 px-3 text-sm">EN</button>
+                <button id="mobile-menu-button" class="md:hidden text-white">
+                    <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16m-7 6h7" />
+                    </svg>
+                </button>
+            </div>
+        </div>
+        <!-- Mobile Menu -->
+        <div id="mobile-menu" class="hidden md:hidden px-6 pb-4">
+            <a href="#about" class="block py-2 text-gray-300 hover:text-blue-400" data-translate-key="nav_about_mobile">عني</a>
+            <a href="#skills" class="block py-2 text-gray-300 hover:text-blue-400" data-translate-key="nav_skills_mobile">مهاراتي</a>
+            <a href="#portfolio" class="block py-2 text-gray-300 hover:text-blue-400" data-translate-key="nav_portfolio_mobile">أعمالي</a>
+            <a href="#education" class="block py-2 text-gray-300 hover:text-blue-400" data-translate-key="nav_experience_mobile">التعليم والخبرة</a>
+            <a href="#contact" class="block py-2 text-gray-300 hover:text-blue-400" data-translate-key="nav_contact_mobile">تواصل معي</a>
+        </div>
+    </header>
+
+    <main>
+        <!-- Hero Section -->
+        <section id="hero" class="min-h-screen flex items-center bg-gray-900">
+            <div class="container mx-auto px-6 text-center">
+                <h1 class="text-4xl md:text-6xl font-bold text-white leading-tight">
+                    <span data-translate-key="hero_greeting">مرحباً، أنا</span> <span class="text-blue-400" data-translate-key="hero_name">أمير عماد </span>
+                </h1>
+                <p class="text-xl md:text-2xl text-gray-300 mt-4 max-w-3xl mx-auto" data-translate-key="hero_subtitle">
+                    مطور واجهات أمامية <b>(Front-End Developer)</b>، متخصص في بناء تجارب ويب تفاعلية وحديثة.
+                </p>
+                <div class="mt-8 space-x-4" id="hero-buttons">
+                    <a href="#portfolio" class="btn btn-primary" data-translate-key="hero_btn_portfolio">تصفح أعمالي</a>
+                    <a href="cv-Amir Emad.pdf" download class="btn btn-secondary" data-translate-key="hero_btn_cv">تحميل السيرة الذاتية</a>
+                </div>
+            </div>
+        </section>
+
+        <!-- About Me Section -->
+        <section id="about" class="py-20">
+            <div class="container mx-auto px-6">
+                <h2 class="section-title text-center" data-translate-key="about_title">نبذة عني</h2>
+                <div class="flex flex-col md:flex-row items-center gap-12 mt-12">
+                    <div class="md:w-1/3">
+                        <img src="ameer.jpg" alt="أمير عماد " class="rounded-full shadow-lg mx-auto w-64 h-64 object-cover">
+                    </div>
+                    <div class="md:w-2/3 text-lg text-gray-300 leading-relaxed">
+                        <p data-translate-key="about_p1">
+                           أنا أمير عماد، مقيم في مدينة السادس من أكتوبر. أسعى للعمل في بيئة تقنية إبداعية تسمح لي بتطبيق مهاراتي التي اكتسبتها من دراستي الأكاديمية في نظم المعلومات الإدارية وتدريبي المكثف في معهد تكنولوجيا المعلومات (ITI). 
+                        </p>
+                        <p class="mt-4" data-translate-key="about_p2">
+                           شغوف بتطوير نفسي باستمرار والمساهمة في بناء حلول تكنولوجية حديثة تسهّل حياة الناس وتدعم نمو الأعمال. أتميز بمهارات قوية في حل المشكلات، العمل الجماعي، وإدارة الوقت، وأبحث دائماً عن التحدي القادم.
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Skills Section -->
+        <section id="skills" class="py-20 bg-gray-900">
+            <div class="container mx-auto px-6">
+                <h2 class="section-title text-center" data-translate-key="skills_title">المهارات التقنية</h2>
+                <div class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-8 mt-12">
+                    <div class="skill-card"><h3 class="text-xl font-bold text-white">HTML</h3></div>
+                    <div class="skill-card"><h3 class="text-xl font-bold text-white">CSS</h3></div>
+                    <div class="skill-card"><h3 class="text-xl font-bold text-white">JavaScript</h3></div>
+                    <div class="skill-card"><h3 class="text-xl font-bold text-white">React</h3></div>
+                    <div class="skill-card"><h3 class="text-xl font-bold text-white">Git & GitHub</h3></div>
+                    <div class="skill-card"><h3 class="text-xl font-bold text-white">UI/UX Design</h3></div>
+                    <div class="skill-card"><h3 class="text-xl font-bold text-white">Responsive Design</h3></div>
+                    <div class="skill-card"><h3 class="text-xl font-bold text-white">VS Code</h3></div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Portfolio Section -->
+        <section id="portfolio" class="py-20">
+            <div class="container mx-auto px-6">
+                <h2 class="section-title text-center" data-translate-key="portfolio_title">المشاريع البارزة</h2>
+                <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8 mt-12">
+                    <!-- Project Card 1: Smart Parking -->
+                    <div class="bg-gray-800 rounded-lg overflow-hidden shadow-lg group">
+                        <img src="WhatsApp Image 2025-06-19 at 13.42.27_c6b681ac.jpg" alt="مشروع نظام الركن الذكي" class="w-full h-48 object-cover">
+                        <div class="p-6">
+                            <h3 class="text-xl font-bold text-white mb-2" data-translate-key="project1_title">مشروع التخرج – Smart Parking System</h3>
+                            <p class="text-gray-400 mb-4 text-sm" data-translate-key="project1_desc">نظام ذكي لإدارة مواقف السيارات باستخدام ESP32 وحساسات وواجهة ويب، مع تسجيل المستخدمين وعرض حالة الركن واستخدام NFC.</p>
+                            <div class="space-x-4" id="project1-buttons">
+                                <a href="https://ameer-emad.github.io/Graduation-project/homepage.html" class="btn btn-secondary text-sm" data-translate-key="project_btn_view">شاهد المشروع</a>
+                                <!-- <a href="#" class="btn btn-secondary text-sm" data-translate-key="project_btn_code">الكود على GitHub</a> -->
+                            </div>
+                        </div>
+                    </div>
+                    <!-- Project Card 2: Portfolio -->
+                    <div class="bg-gray-800 rounded-lg overflow-hidden shadow-lg group">
+                        <img src="p.jpg" alt="موقع شخصي" class="w-full h-48 object-cover">
+                        <div class="p-6">
+                            <h3 class="text-xl font-bold text-white mb-2" data-translate-key="project2_title">موقع شخصي (Portfolio)</h3>
+                            <p class="text-gray-400 mb-4 text-sm" data-translate-key="project2_desc">موقع متعدد الصفحات لعرض السيرة الذاتية والمشاريع والمهارات، يدعم الوضع الليلي وتبديل اللغة (عربي/إنجليزي).</p>
+                            <div class="space-x-4" id="project2-buttons">
+                                <a href="#" class="btn btn-secondary text-sm" data-translate-key="project_btn_view">شاهد المشروع</a>
+                                <a href="https://github.com/AmeerEmad/Portfolio" class="btn btn-secondary text-sm" data-translate-key="project_btn_code">الكود على GitHub</a>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- Project Card 3: Freelance -->
+                    <div class="bg-gray-800 rounded-lg overflow-hidden shadow-lg group">
+                        <img src="https://placehold.co/600x400/1F2937/FFFFFF?text=Freelance+Projects" alt="مشاريع حرة" class="w-full h-48 object-cover">
+                        <div class="p-6">
+                            <h3 class="text-xl font-bold text-white mb-2" data-translate-key="project3_title">مواقع لعملاء (Freelance)</h3>
+                            <p class="text-gray-400 mb-4 text-sm" data-translate-key="project3_desc">تصميم وتطوير مواقع لمتاجر وشركات صغيرة مع التركيز على تحسين السرعة، الجمالية، ونتائج البحث (SEO).</p>
+                            <div class="space-x-4" id="project3-buttons">
+                                <a href="#" class="btn btn-secondary text-sm" data-translate-key="project_btn_examples">أمثلة للمشاريع</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Education & Experience Section -->
+        <section id="education" class="py-20 bg-gray-900">
+            <div class="container mx-auto px-6">
+                <h2 class="section-title text-center" data-translate-key="experience_title">التعليم والخبرة</h2>
+                <div class="max-w-3xl mx-auto mt-12">
+                    <div class="relative border-r-2 border-gray-700 ml-3" id="timeline">
+                        <!-- Experience Item -->
+                        <div class="mb-8 ml-6">
+                            <span class="absolute flex items-center justify-center w-6 h-6 bg-blue-500 rounded-full -right-3 ring-8 ring-gray-900">
+                                <svg class="w-3 h-3 text-white" fill="currentColor" viewBox="0 0 20 20"><path d="M20 7L12 11L4 7V5L12 9L20 5V7Z M12 1L22 6V16L12 21L2 16V6L12 1Z"/></svg>
+                            </span>
+                            <h3 class="flex items-center mb-1 text-lg font-semibold text-white"><span data-translate-key="exp1_title">Front-End Developer</span> <span class="text-blue-400 text-sm font-medium mr-2 px-2.5 py-0.5 rounded ml-3" data-translate-key="exp1_type">Freelancer</span></h3>
+                            <p class="block mb-2 text-sm font-normal leading-none text-gray-500" data-translate-key="exp1_desc">العمل الحر على مشاريع ويب تفاعلية، تحسين الأداء و SEO، وتطوير واجهات مخصصة.</p>
+                        </div>
+                        <!-- Education Item: ITI -->
+                        <div class="mb-8 ml-6">
+                            <span class="absolute flex items-center justify-center w-6 h-6 bg-blue-500 rounded-full -right-3 ring-8 ring-gray-900">
+                                <svg class="w-3 h-3 text-white" fill="currentColor" viewBox="0 0 20 20"><path d="M9 2L3 5V11C3 16.5 7.5 21 12 22C16.5 21 21 16.5 21 11V5L15 2H9Z M12 13H11V17H13V13H12Z M12 7C12.55 7 13 7.45 13 8C13 8.55 12.55 9 12 9C11.45 9 11 8.55 11 8C11 7.45 11.45 7 12 7Z"/></svg>
+                            </span>
+                            <h3 class="mb-1 text-lg font-semibold text-white" data-translate-key="exp2_title">شهادة تطوير الواجهات الأمامية (Front-End)</h3>
+                            <p class="block mb-2 text-sm font-normal leading-none text-gray-400" data-translate-key="exp2_location">معهد تكنولوجيا المعلومات (ITI)، فرع قناة السويس</p>
+                            <p class="text-sm text-gray-500" data-translate-key="exp2_desc">تدريب احترافي مكثف على HTML, CSS, JavaScript, Responsive Design, و UX.</p>
+                        </div>
+                        <!-- Education Item: University -->
+                        <div class="mb-8 ml-6">
+                            <span class="absolute flex items-center justify-center w-6 h-6 bg-blue-500 rounded-full -right-3 ring-8 ring-gray-900">
+                                <svg class="w-3 h-3 text-white" fill="currentColor" viewBox="0 0 20 20"><path d="M12 12.5a.5.5 0 0 1-.5-.5v-5a.5.5 0 0 1 1 0v5a.5.5 0 0 1-.5.5z"/><path d="M12 3.5a.5.5 0 0 1 .5.5v1a.5.5 0 0 1-1 0v-1a.5.5 0 0 1 .5-.5z"/><path d="M12 2a10 10 0 1 0 0 20 10 10 0 0 0 0-20zm0 18a8 8 0 1 1 0-16 8 8 0 0 1 0 16z"/></svg>
+                            </span>
+                            <h3 class="mb-1 text-lg font-semibold text-white" data-translate-key="exp3_title">بكالوريوس نظم معلومات إدارية</h3>
+                            <p class="block mb-2 text-sm font-normal leading-none text-gray-400" data-translate-key="exp3_location">جامعة بورسعيد</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Contact Section -->
+        <section id="contact" class="py-20">
+            <div class="container mx-auto px-6 text-center">
+                <h2 class="section-title" data-translate-key="contact_title">تواصل معي</h2>
+                <p class="text-lg text-gray-400 mt-4 mb-8 max-w-2xl mx-auto" data-translate-key="contact_subtitle">
+                    أنا متاح حالياً لفرص عمل جديدة ومتحمس للمساهمة في مشاريعكم القادمة. لا تتردد في التواصل معي عبر البريد الإلكتروني أو حساباتي على الشبكات الاجتماعية.
+                </p>
+                <a href="mailto:ameeremad540@gmail.com" class="btn btn-primary text-lg">
+                    ameeremad540@gmail.com
+                </a>
+                <p class="text-gray-400 mt-4" data-translate-key="contact_whatsapp">أو عبر واتساب: <a href="https://wa.me/+201555074697" class="hover:text-blue-400" dir="ltr">+20 155 507 4697</a></p>
+                <div class="flex justify-center space-x-6 mt-8" id="social-icons">
+                    <!-- LinkedIn -->
+                    <a href="www.linkedin.com/in/ameer-emad-b55379249" target="_blank" class="text-gray-400 hover:text-blue-400">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" fill="currentColor"><path d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.79-1.75-1.764s.784-1.764 1.75-1.764 1.75.79 1.75 1.764-.783 1.764-1.75 1.764zm13.5 12.268h-3v-5.604c0-3.368-4-3.113-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.777 7 2.476v6.759z"/></svg>
+                    </a>
+                    <!-- GitHub -->
+                    <a href="https://github.com/ameer-emad" target="_blank" class="text-gray-400 hover:text-blue-400">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" fill="currentColor"><path d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z"/></svg>
+                    </a>
+                    <!-- Facebook -->
+                    <a href="https://www.facebook.com/share/16LzKCosRc/" target="_blank" class="text-gray-400 hover:text-blue-400">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" fill="currentColor"><path d="M22 12c0-5.523-4.477-10-10-10s-10 4.477-10 10c0 5.087 3.76 9.312 8.625 9.94v-7.015h-2.54v-2.925h2.54v-2.134c0-2.524 1.503-3.915 3.79-3.915 1.09 0 2.22.195 2.22.195v2.47h-1.26c-1.24 0-1.62.78-1.62 1.55v1.83h2.79l-.45 2.925h-2.34v7.015c4.865-.628 8.625-4.853 8.625-9.94z"/></svg>
+                    </a>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Footer -->
+    <footer class="bg-gray-900 border-t border-gray-700 py-6">
+        <div class="container mx-auto px-6 text-center text-gray-500">
+            <p data-translate-key="footer_text">&copy; 2025 أمير عماد عياد. كل الحقوق محفوظة.</p>
+        </div>
+    </footer>
+
+    <script>
+        // --- LANGUAGE SWITCHER SCRIPT ---
+
+        const translations = {
+            ar: {
+                name: "أمير عماد",
+                nav_about: "عني",
+                nav_skills: "مهاراتي",
+                nav_portfolio: "أعمالي",
+                nav_experience: "التعليم والخبرة",
+                nav_contact: "تواصل معي",
+                nav_about_mobile: "عني",
+                nav_skills_mobile: "مهاراتي",
+                nav_portfolio_mobile: "أعمالي",
+                nav_experience_mobile: "التعليم والخبرة",
+                nav_contact_mobile: "تواصل معي",
+                hero_greeting: "مرحباً، أنا",
+                hero_name: "أمير عماد ",
+                hero_subtitle: "مطور واجهات أمامية (Front-End Developer)، متخصص في بناء تجارب ويب تفاعلية وحديثة.",
+                hero_btn_portfolio: "تصفح أعمالي",
+                hero_btn_cv: "تحميل السيرة الذاتية",
+                about_title: "نبذة عني",
+                about_p1: "أنا أمير عماد، مقيم في مدينة السادس من أكتوبر. أسعى للعمل في بيئة تقنية إبداعية تسمح لي بتطبيق مهاراتي التي اكتسبتها من دراستي الأكاديمية في نظم المعلومات الإدارية وتدريبي المكثف في معهد تكنولوجيا المعلومات (ITI).",
+                about_p2: "شغوف بتطوير نفسي باستمرار والمساهمة في بناء حلول تكنولوجية حديثة تسهّل حياة الناس وتدعم نمو الأعمال. أتميز بمهارات قوية في حل المشكلات، العمل الجماعي، وإدارة الوقت، وأبحث دائماً عن التحدي القادم.",
+                skills_title: "المهارات التقنية",
+                portfolio_title: "المشاريع البارزة",
+                project1_title: "مشروع التخرج – Smart Parking System",
+                project1_desc: "نظام ذكي لإدارة مواقف السيارات باستخدام ESP32 وحساسات وواجهة ويب، مع تسجيل المستخدمين وعرض حالة الركن واستخدام NFC.",
+                project_btn_view: "شاهد المشروع",
+                project_btn_code: "الكود على GitHub",
+                project2_title: "موقع شخصي (Portfolio)",
+                project2_desc: "موقع متعدد الصفحات لعرض السيرة الذاتية والمشاريع والمهارات، يدعم الوضع الليلي وتبديل اللغة (عربي/إنجليزي).",
+                project3_title: "مواقع لعملاء (Freelance)",
+                project3_desc: "تصميم وتطوير مواقع لمتاجر وشركات صغيرة مع التركيز على تحسين السرعة، الجمالية، ونتائج البحث (SEO).",
+                project_btn_examples: "أمثلة للمشاريع",
+                experience_title: "التعليم والخبرة",
+                exp1_title: "Front-End Developer",
+                exp1_type: "Freelancer",
+                exp1_desc: "العمل الحر على مشاريع ويب تفاعلية، تحسين الأداء و SEO، وتطوير واجهات مخصصة.",
+                exp2_title: "شهادة تطوير الواجهات الأمامية (Front-End)",
+                exp2_location: "معهد تكنولوجيا المعلومات (ITI)، فرع قناة السويس",
+                exp2_desc: "تدريب احترافي مكثف على HTML, CSS, JavaScript, Responsive Design, و UX.",
+                exp3_title: "بكالوريوس نظم معلومات إدارية",
+                exp3_location: "جامعة بورسعيد",
+                contact_title: "تواصل معي",
+                contact_subtitle: "أنا متاح حالياً لفرص عمل جديدة ومتحمس للمساهمة في مشاريعكم القادمة. لا تتردد في التواصل معي عبر البريد الإلكتروني أو حساباتي على الشبكات الاجتماعية.",
+                contact_whatsapp: "أو عبر واتساب:",
+                footer_text: `&copy; ${new Date().getFullYear()} أمير عماد عياد. كل الحقوق محفوظة.`
+            },
+            en: {
+                name: "Amir Emad",
+                nav_about: "About",
+                nav_skills: "Skills",
+                nav_portfolio: "Portfolio",
+                nav_experience: "Experience",
+                nav_contact: "Contact",
+                nav_about_mobile: "About",
+                nav_skills_mobile: "Skills",
+                nav_portfolio_mobile: "Portfolio",
+                nav_experience_mobile: "Experience",
+                nav_contact_mobile: "Contact",
+                hero_greeting: "Hello, I'm",
+                hero_name: "Amir Emad ",
+                hero_subtitle: "Front-End Developer, specializing in building modern and interactive web experiences.",
+                hero_btn_portfolio: "View My Work",
+                hero_btn_cv: "Download CV",
+                about_title: "About Me",
+                about_p1: "I'm Ameer Emad, based in 6th of October City. I am seeking to work in a creative tech environment where I can apply the skills gained from my academic studies in Management Information Systems and my intensive training at the Information Technology Institute (ITI).",
+                about_p2: "I am passionate about continuous self-development and contributing to modern technological solutions that simplify people's lives and support business growth. I possess strong skills in problem-solving, teamwork, and time management, and I am always looking for the next challenge.",
+                skills_title: "Technical Skills",
+                portfolio_title: "Featured Projects",
+                project1_title: "Graduation Project – Smart Parking System",
+                project1_desc: "A smart system to manage parking lots using ESP32, sensors, and a web interface for users, including user registration, parking status display, and NFC usage.",
+                project_btn_view: "Live Demo",
+                project_btn_code: "View on GitHub",
+                project2_title: "Personal Portfolio Website",
+                project2_desc: "A multi-page website presenting my resume, projects, and skills, featuring dark mode and language switching (Arabic/English).",
+                project3_title: "Freelance Client Websites",
+                project3_desc: "Designing and developing websites for e-commerce stores and small businesses with a focus on speed, aesthetics, and SEO.",
+                project_btn_examples: "View Examples",
+                experience_title: "Education & Experience",
+                exp1_title: "Front-End Developer",
+                exp1_type: "Freelancer",
+                exp1_desc: "Freelance work on interactive web projects, improving performance and SEO, and developing custom interfaces.",
+                exp2_title: "Front-End Development Certificate",
+                exp2_location: "Information Technology Institute (ITI), Suez Canal Branch",
+                exp2_desc: "Intensive professional training in HTML, CSS, JavaScript, Responsive Design, and UX.",
+                exp3_title: "Bachelor of Management Information Systems",
+                exp3_location: "Port Said University",
+                contact_title: "Get In Touch",
+                contact_subtitle: "I am currently available for new job opportunities and excited to contribute to your next projects. Feel free to contact me via email or my social media accounts.",
+                contact_whatsapp: "Or via WhatsApp:",
+                footer_text: `&copy; ${new Date().getFullYear()} Ameer Emad Ayad. All rights reserved.`
+            }
+        };
+
+        const langToggleButton = document.getElementById('lang-toggle-btn');
+        let currentLang = 'ar';
+
+        const switchLanguage = (lang) => {
+            currentLang = lang;
+            document.documentElement.lang = lang;
+            document.documentElement.dir = lang === 'ar' ? 'rtl' : 'ltr';
+
+            document.querySelectorAll('[data-translate-key]').forEach(element => {
+                const key = element.getAttribute('data-translate-key');
+                if (translations[lang][key]) {
+                    element.innerHTML = translations[lang][key];
+                }
+            });
+
+            // Adjust spacing for nav and buttons based on direction
+            const elementsToToggleSpacing = [
+                document.getElementById('main-nav'),
+                document.getElementById('hero-buttons'),
+                document.getElementById('project1-buttons'),
+                document.getElementById('project2-buttons'),
+                document.getElementById('project3-buttons'),
+                document.getElementById('social-icons'),
+            ];
+            
+            elementsToToggleSpacing.forEach(el => {
+                if(el) {
+                    if (lang === 'ar') {
+                        el.classList.add('space-x-reverse');
+                    } else {
+                        el.classList.remove('space-x-reverse');
+                    }
+                }
+            });
+
+            // Adjust timeline border based on direction
+            const timeline = document.getElementById('timeline');
+            if (timeline) {
+                if (lang === 'ar') {
+                    timeline.classList.remove('border-l-2', 'mr-3');
+                    timeline.classList.add('border-r-2', 'ml-3');
+                    timeline.querySelectorAll('span[class*="-right-3"]').forEach(span => {
+                        span.classList.remove('-left-3');
+                        span.classList.add('-right-3');
+                    });
+                } else {
+                    timeline.classList.remove('border-r-2', 'ml-3');
+                    timeline.classList.add('border-l-2', 'mr-3');
+                    timeline.querySelectorAll('span[class*="-right-3"]').forEach(span => {
+                        span.classList.remove('-right-3');
+                        span.classList.add('-left-3');
+                    });
+                }
+            }
+
+
+            langToggleButton.textContent = lang === 'ar' ? 'EN' : 'AR';
+        };
+
+        langToggleButton.addEventListener('click', () => {
+            const newLang = currentLang === 'ar' ? 'en' : 'ar';
+            switchLanguage(newLang);
+        });
+
+        // Mobile menu toggle
+        const mobileMenuButton = document.getElementById('mobile-menu-button');
+        const mobileMenu = document.getElementById('mobile-menu');
+
+        mobileMenuButton.addEventListener('click', () => {
+            mobileMenu.classList.toggle('hidden');
+        });
+        
+        // Initial load
+        switchLanguage('ar');
+
+    </script>
+</body>
+</html>
